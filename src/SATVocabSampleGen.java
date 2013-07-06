@@ -42,4 +42,13 @@ public class SATVocabSampleGen implements SimpleProgram {
 		L.ogp("Words right out of Total: " + numRight + " out of " + sampleSize);
 		L.ogp("Percent correct: " + DecimalFormat.getPercentInstance().format(proportionRight));
 	}
+
+	@Override
+	public String getInstructions() {
+		String instructions = 
+				"Use to generate a random sample of vocab word line numbers to be used with a " +
+				"wordlist. \n arg1 = lower bound for line #, arg2 = upper bound for line#, arg3 = sample size";
+						
+		return instructions;
+	}
 }
