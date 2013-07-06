@@ -31,7 +31,7 @@ public class SATVocabSampleGen implements SimpleProgram {
 				return;
 			}
 			
-			L.og("");
+			L.ln();
 		}
 		
 		printStats(numRight, sampleSize);
@@ -39,7 +39,7 @@ public class SATVocabSampleGen implements SimpleProgram {
 	
 	private void printStats(int numRight, int sampleSize) {
 		double proportionRight = (double)numRight / sampleSize;
-		System.out.print("Words right out of Total: " + numRight + " out of " + sampleSize);
-		System.out.print("Percent correct: " + DecimalFormat.getPercentInstance().format(proportionRight));
+		L.ogp("Words right out of Total: " + numRight + " out of " + sampleSize);
+		L.ogp("Percent correct: " + DecimalFormat.getPercentInstance().format(proportionRight));
 	}
 }
