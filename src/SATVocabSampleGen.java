@@ -1,14 +1,14 @@
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
-import com.agopinath.lthelogutil.Fl;
+import com.agopinath.lthelogutil.L;
 
 
 public class SATVocabSampleGen implements SimpleProgram {
 	@Override
 	public void runProgram(Scanner input, String[] args) {
 		if(args == null) {
-			Fl.err("need args");
+			L.err("need args");
 			return;
 		}
 		
@@ -21,8 +21,8 @@ public class SATVocabSampleGen implements SimpleProgram {
 		
 		for(int i = 1; i <= sampleSize; i++) {
 			int toCheck = (int) (Math.random()*(populationSize) + lowerBound);
-			System.out.println("Verify word number: " + toCheck);
-			System.out.print("Was it correct? (y/n): ");
+			L.og("Verify word number: " + toCheck);
+			L.ogp("Was it correct? (y/n): ");
 			String response = input.next();
 			if(response.equalsIgnoreCase("y")) {
 				numRight++;
@@ -31,7 +31,7 @@ public class SATVocabSampleGen implements SimpleProgram {
 				return;
 			}
 			
-			Fl.og("\n");
+			L.og("");
 		}
 		
 		printStats(numRight, sampleSize);

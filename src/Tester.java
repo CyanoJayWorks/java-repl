@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
-import com.agopinath.lthelogutil.Fl;
+import com.agopinath.lthelogutil.L;
 
 
 public class Tester {
 	public static void main(String[] asdf) {
 		Scanner s = new Scanner(System.in);
-		System.out.print("Enter a class to run (separate arguments by a space): ");
+		L.ogp("Enter a class to run (separate arguments by a space): ");
 		String input = s.nextLine().trim();
 		
 		boolean hasArgs = input.contains(" ");
@@ -16,18 +16,18 @@ public class Tester {
 		try {
 			toRun = Class.forName(className);
 		} catch (ClassNotFoundException e) {
-			Fl.err("Class not found: " + className);
+			L.err("Class not found: " + className);
 		}
 		
 		if(!SimpleProgram.class.isAssignableFrom(toRun)) {
-			Fl.err("Class does not implement SimpleProgram");
+			L.err("Class does not implement SimpleProgram");
 		}
 		
 		SimpleProgram program = null;
 		try {
 			program = (SimpleProgram) toRun.newInstance();
 		} catch (InstantiationException | IllegalAccessException e) {
-			Fl.err("Error instantiating class");
+			L.err("Error instantiating class");
 			e.printStackTrace();
 		}
 		
