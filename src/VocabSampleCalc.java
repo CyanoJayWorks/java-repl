@@ -16,7 +16,7 @@ public class VocabSampleCalc implements SimpleProgram {
 		
 		for(int i = 1; i <= sampleSize; i++) {
 			int toCheck = (int) (Math.random()*(populationSize) + lowerBound);
-			L.og("Verify word number: " + toCheck);
+			L.og(i + ") Verify word number: " + toCheck);
 			L.ogp("Was it correct? (y/n): ");
 			String response = input.next();
 			if(response.equalsIgnoreCase("y")) {
@@ -34,7 +34,7 @@ public class VocabSampleCalc implements SimpleProgram {
 	
 	private void printStats(int numRight, int sampleSize) {
 		double proportionRight = (double)numRight / sampleSize;
-		L.ogp("Words right out of Total: " + numRight + " out of " + sampleSize);
+		L.og("Words right out of Total: " + numRight + " out of " + sampleSize);
 		L.ogp("Percent correct: " + DecimalFormat.getPercentInstance().format(proportionRight));
 	}
 
