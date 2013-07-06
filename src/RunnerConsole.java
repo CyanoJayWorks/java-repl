@@ -51,17 +51,24 @@ public class RunnerConsole {
 		if(program == null) return;
 		
 		String instruct = program.getInstructions() + "\n";
-		L.og("USE: " + instruct);  
+		L.og("USAGE: " + instruct);  
 	}
 
-	private  void runProgram(String body) {
+	private void runProgram(String body) {
 		String[] data = parseBody(body);
 		SimpleProgram program = getProgramInstance(data[0]);
 		if(program == null) return;
 		
 		String[] arguments = null;
-		if(data[1] != null)
-			arguments = data[1].contains(" ") ? data[1].split(" ") : new String[] {data[1]};
+		if(program.isArgumentsRequired()) {
+			if(data[1] != null) {
+				arguments = data[1].contains(" ") ? data[1].split(" ") : new String[] {data[1]};
+			} else {
+				L.err("Arguments required..."); // if arguments are required but not specified,
+				getHelp(body);					// alert the user and print out program usage instructions and exit
+				return;
+			}
+		}
 		
 		program.runProgram(s, arguments);
 	}

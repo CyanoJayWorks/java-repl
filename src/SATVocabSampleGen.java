@@ -7,11 +7,6 @@ import com.agopinath.lthelogutil.L;
 public class SATVocabSampleGen implements SimpleProgram {
 	@Override
 	public void runProgram(Scanner input, String[] args) {
-		if(args == null) {
-			L.err("need args");
-			return;
-		}
-		
 		int lowerBound = Integer.parseInt(args[0]);
 		int upperBound = Integer.parseInt(args[1]);
 		int sampleSize = Integer.parseInt(args[2]);
@@ -50,5 +45,10 @@ public class SATVocabSampleGen implements SimpleProgram {
 				"wordlist.\narg1 (int) = lower bound for line #, arg2 (int) = upper bound for line#, arg3 (int) = sample size";
 						
 		return instructions;
+	}
+	
+	@Override
+	public boolean isArgumentsRequired() {
+		return true;
 	}
 }

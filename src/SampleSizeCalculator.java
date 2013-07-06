@@ -26,4 +26,9 @@ public class SampleSizeCalculator implements SimpleProgram {
 						
 		return instructions;
 	}
+
+	@Override
+	public boolean isArgumentsRequired() {
+		return true;
+	}
 }
