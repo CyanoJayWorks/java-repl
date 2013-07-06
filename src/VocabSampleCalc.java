@@ -4,7 +4,7 @@ import java.util.Scanner;
 import com.agopinath.lthelogutil.L;
 
 
-public class SATVocabSampleGen implements SimpleProgram {
+public class VocabSampleCalc implements SimpleProgram {
 	@Override
 	public void runProgram(Scanner input, String[] args) {
 		int lowerBound = Integer.parseInt(args[0]);

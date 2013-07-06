@@ -3,7 +3,7 @@ import java.util.Scanner;
 import com.agopinath.lthelogutil.L;
 
 
-public class SampleSizeCalculator implements SimpleProgram {
+public class SampleSizeCalc implements SimpleProgram {
 
 	@Override
 	public void runProgram(Scanner input, String[] args) {
